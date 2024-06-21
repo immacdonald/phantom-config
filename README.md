@@ -13,7 +13,6 @@ Create an `.eslintrc.cjs` file in the root of the project containing:
 module.exports = {
     extends: ['./node_modules/@immacdonald/phantom-config/.eslintrc.cjs']
 };
-
 ```
 
 **Note**: The extension is done using a relative link to `node_modules` rather than the package directly due to ESLint only accepting packages containing `eslint-config` in the name.
@@ -32,7 +31,6 @@ Create a `.stylelintrc.json` file in the root of the project containing:
 {
     "extends": ["@immacdonald/phantom-config/stylelint"]
 }
-
 ```
 
 ### Useful Scripts
