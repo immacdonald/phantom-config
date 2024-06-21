@@ -8,7 +8,7 @@
     ],
     "exports": {
         "./prettier": "./.prettierrc.cjs",
-        "./stylelint": "./stylelintrc.json"
+        "./stylelint": "./.stylelintrc.json"
     },
     "scripts": {
         "prettier": "prettier ./ --check",
