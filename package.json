@@ -3,10 +3,12 @@
     "version": "0.0.3",
     "files": [
         ".prettierrc.cjs",
-        ".prettierignore"
+        ".prettierignore",
+        ".stylelintrc.json"
     ],
     "exports": {
-        "./prettier": "./.prettierrc.cjs"
+        "./prettier": "./.prettierrc.cjs",
+        "./stylelint": "./stylelintrc.json"
     },
     "scripts": {
         "prettier": "prettier ./ --check",
@@ -14,6 +16,9 @@
     },
     "peerDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
-        "prettier": "^3.3.2"
+        "prettier": "^3.3.2",
+        "stylelint": "^16.3.1",
+        "stylelint-config-standard": "^36.0.0",
+        "stylelint-config-standard-scss": "^13.1.0"
     }
 }
