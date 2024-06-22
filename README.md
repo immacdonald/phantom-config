@@ -9,6 +9,7 @@ This package offers preset configurations for ESLint, Prettier, and Stylelint to
 #### ESLint
 
 Create an `.eslintrc.cjs` file in the root of the project containing:
+
 ```
 module.exports = {
     extends: ['./node_modules/@immacdonald/phantom-config/.eslintrc.cjs']
@@ -20,6 +21,7 @@ module.exports = {
 #### Prettier
 
 Create a `.prettierrc.cjs` file in the root of the project containing:
+
 ```
 module.exports = require("@immacdonald/phantom-config/prettier");
 ```
@@ -27,6 +29,7 @@ module.exports = require("@immacdonald/phantom-config/prettier");
 #### Stylelint
 
 Create a `.stylelintrc.json` file in the root of the project containing:
+
 ```
 {
     "extends": ["@immacdonald/phantom-config/stylelint"]
@@ -41,7 +44,7 @@ These can be included as scripts in the `package.json` to more easily access the
 "lint": "eslint . --ext ts,tsx --report-unused-disable-directives && tsc --noEmit --emitDeclarationOnly false",
 "prettier": "prettier ./ --check",
 "prettier:fix": "prettier ./ --write",
-"stylelint": "npx stylelint '**/*.scss'",
-"stylelint:fix": "npx stylelint '**/*.scss' --fix",
+"stylelint": "npx stylelint '**/*.{css,scss}'",
+"stylelint:fix": "npx stylelint '**/*.{css,scss}' --fix",
 "format": "npm run lint && npm run stylelint:fix && npm run prettier:fix"
 ```
