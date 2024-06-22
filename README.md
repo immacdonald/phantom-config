@@ -12,7 +12,7 @@ Create an `.eslintrc.cjs` file in the root of the project containing:
 
 ```
 module.exports = {
-    extends: ['./node_modules/@immacdonald/phantom-config/.eslintrc.cjs']
+    extends: ['./node_modules/@imacdonald/phantom-config/.eslintrc.cjs']
 };
 ```
 
@@ -23,7 +23,7 @@ module.exports = {
 Create a `.prettierrc.cjs` file in the root of the project containing:
 
 ```
-module.exports = require("@immacdonald/phantom-config/prettier");
+module.exports = require("@imacdonald/phantom-config/prettier");
 ```
 
 #### Stylelint
@@ -32,7 +32,7 @@ Create a `.stylelintrc.json` file in the root of the project containing:
 
 ```
 {
-    "extends": ["@immacdonald/phantom-config/stylelint"]
+    "extends": ["@imacdonald/phantom-config/stylelint"]
 }
 ```
 
