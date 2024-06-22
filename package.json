@@ -1,6 +1,7 @@
 {
     "name": "@imacdonald/phantom-config",
     "version": "0.2.0",
+    "description": "Shared configurations for ESLint, Prettier, and Stylelint",
     "files": [
         ".eslintrc.cjs",
         ".prettierrc.cjs",
@@ -17,6 +18,21 @@
         "prettier:fix": "prettier ./ --write",
         "format": "npm run prettier:fix"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/immacdonald/phantom-config.git"
+    },
+    "keywords": [
+        "eslint",
+        "prettier",
+        "stylelint"
+    ],
+    "author": "Ian MacDonald",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/immacdonald/phantom-config/issues"
+    },
+    "homepage": "https://github.com/immacdonald/phantom-config#readme",
     "peerDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "@typescript-eslint/eslint-plugin": "^6.0.0",
