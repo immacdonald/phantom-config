@@ -42,8 +42,8 @@ These can be included as scripts in the `package.json` to more easily access the
 
 ```
 "lint": "eslint . --ext ts,tsx --report-unused-disable-directives && tsc --noEmit --emitDeclarationOnly false",
-"prettier": "prettier ./ --check --ignore-path node_modules/@imacdonald/phantom-config/.prettierignore",
-"prettier:fix": "prettier ./ --write --ignore-path node_modules/@imacdonald/phantom-config/.prettierignore",
+"prettier": "prettier ./ --check --ignore-path ./node_modules/@imacdonald/phantom-config/.prettierignore",
+"prettier:fix": "prettier ./ --write --ignore-path ./node_modules/@imacdonald/phantom-config/.prettierignore",
 "stylelint": "npx stylelint '**/*.{css,scss}'",
 "stylelint:fix": "npx stylelint '**/*.{css,scss}' --fix",
 "format": "npm run lint && npm run stylelint:fix && npm run prettier:fix"
