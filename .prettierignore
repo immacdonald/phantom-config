@@ -9,6 +9,6 @@
 **/node_modules
 
 # Ignore certain files within the data folder
-/data/**/*.json
-/data/**/*.jsonl
-/data/**/*.csv
+**/data/**/*.json
+**/data/**/*.jsonl
+**/data/**/*.csv
