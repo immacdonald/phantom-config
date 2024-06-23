@@ -11,7 +11,7 @@ module.exports = {
         '<TYPES>^[.]',
         '^react$',
         '<THIRD_PARTY_MODULES>',
-        '^(@api|@assets|@components|@config|@contexts|@data|@hooks|@styles|@types|@views)(/.*)$',
+        '^(@api|@assets|@components|@config|@contexts|@data|@hooks|@icons|@styles|@types|@views)(/.*)$',
         '^(?!.*[.](css|scss)$)[./].*$',
         '.(css|scss)$'
     ]
