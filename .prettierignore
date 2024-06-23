@@ -1,9 +1,14 @@
 # Ignore builds
-**/lib
-**/dist
+/lib/
+/dist/
 
 # Ignore non-source files
 **/.git
 **/.svn
 **/.hg
 **/node_modules
+
+# Ignore certain files within the data folder
+/data/**/*.json
+/data/**/*.jsonl
+/data/**/*.csv
