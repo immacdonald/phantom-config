@@ -1,6 +1,6 @@
 {
     "name": "@imacdonald/phantom-config",
-    "version": "0.2.7",
+    "version": "0.3.0",
     "description": "Shared configurations for ESLint, Prettier, and Stylelint",
     "files": [
         ".eslintrc.cjs",
