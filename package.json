@@ -1,17 +1,19 @@
 {
     "name": "@imacdonald/phantom-config",
     "version": "0.3.0",
-    "description": "Shared configurations for ESLint, Prettier, and Stylelint",
+    "description": "Shared configurations for ESLint, Prettier, Stylelint, and TypeScript",
     "files": [
         ".eslintrc.cjs",
         ".prettierrc.cjs",
         ".prettierignore",
-        ".stylelintrc.json"
+        ".stylelintrc.json",
+        "tsconfig.json"
     ],
     "exports": {
         "./eslint": "./.eslintrc.cjs",
         "./prettier": "./.prettierrc.cjs",
-        "./stylelint": "./.stylelintrc.json"
+        "./stylelint": "./.stylelintrc.json",
+        "./tsconfig": "./tsconfig.json"
     },
     "scripts": {
         "prettier": "prettier ./ --check",
