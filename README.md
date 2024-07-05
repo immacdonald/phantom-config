@@ -12,7 +12,7 @@ Create an `.eslintrc.cjs` file in the root of the project containing:
 
 ```
 module.exports = {
-    extends: ['./node_modules/@imacdonald/phantom-config/.eslintrc.cjs']
+    extends: ['./node_modules/phantom-config/.eslintrc.cjs']
 };
 ```
 
@@ -23,7 +23,7 @@ module.exports = {
 Create a `.prettierrc.cjs` file in the root of the project containing:
 
 ```
-module.exports = require("@imacdonald/phantom-config/prettier");
+module.exports = require("phantom-config/prettier");
 ```
 
 #### Stylelint
@@ -32,7 +32,7 @@ Create a `.stylelintrc.json` file in the root of the project containing:
 
 ```
 {
-    "extends": ["@imacdonald/phantom-config/stylelint"]
+    "extends": ["phantom-config/stylelint"]
 }
 ```
 
@@ -42,9 +42,10 @@ These can be included as scripts in the `package.json` to more easily access the
 
 ```
 "lint": "eslint . --ext ts,tsx --report-unused-disable-directives && tsc --noEmit --emitDeclarationOnly false",
-"prettier": "prettier ./ --check --ignore-path ./node_modules/@imacdonald/phantom-config/.prettierignore",
-"prettier:fix": "prettier ./ --write --ignore-path ./node_modules/@imacdonald/phantom-config/.prettierignore",
+"lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix && tsc --noEmit --emitDeclarationOnly false",
+"prettier": "prettier ./ --check --ignore-path ./node_modules/phantom-config/.prettierignore",
+"prettier:fix": "prettier ./ --write --ignore-path ./node_modules/phantom-config/.prettierignore",
 "stylelint": "npx stylelint '**/*.{css,scss}'",
 "stylelint:fix": "npx stylelint '**/*.{css,scss}' --fix",
-"format": "npm run lint && npm run stylelint:fix && npm run prettier:fix"
+"format": "npm run lint:fix && npm run stylelint:fix && npm run prettier:fix"
 ```
