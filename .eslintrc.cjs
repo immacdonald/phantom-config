@@ -1,12 +1,12 @@
-const createPathGroup = (pattern) => [
+const createPathGroup = (pattern, group = 'internal') => [
     {
         pattern,
-        group: 'internal',
+        group,
         position: 'after'
     },
     {
         pattern: `${pattern}/**`,
-        group: 'internal',
+        group,
         position: 'after'
     }
 ];
@@ -27,13 +27,14 @@ module.exports = {
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
         '@typescript-eslint/no-explicit-any': 'warn',
-        "@typescript-eslint/explicit-function-return-type": "warn",
+        '@typescript-eslint/explicit-function-return-type': 'warn',
         'import-x/no-named-as-default': 'off',
         'import-x/no-default-export': 'error',
         'import-x/order': [
             'error',
             {
                 pathGroups: [
+                    ...createPathGroup('@types', 'type'),
                     ...createPathGroup('@api'),
                     ...createPathGroup('@assets'),
                     ...createPathGroup('@components'),
@@ -42,7 +43,6 @@ module.exports = {
                     ...createPathGroup('@data'),
                     ...createPathGroup('@hooks'),
                     ...createPathGroup('@styles'),
-                    ...createPathGroup('@types'),
                     ...createPathGroup('@utility'),
                     ...createPathGroup('@views')
                 ],
