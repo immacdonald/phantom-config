@@ -1,6 +1,6 @@
 {
     "name": "phantom-config",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "description": "Shared configurations for ESLint, Prettier, Stylelint, and TypeScript",
     "files": [
         ".eslintrc.cjs",
