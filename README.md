@@ -8,15 +8,17 @@ This package offers preset configurations for ESLint, Prettier, and Stylelint to
 
 #### ESLint
 
-Create an `.eslintrc.cjs` file in the root of the project containing:
+As of `phantom-config@0.18.0`, the supported version of ESLint is ESLint 9 based on flattened configs. For using with ESLint 8, please use `phantom-config@0.17.2`. 
+
+Create an `eslint.config.js` file in the root of the project containing:
 
 ```
-module.exports = {
-    extends: ['./node_modules/phantom-config/.eslintrc.cjs']
-};
-```
+import phantomConfig from 'phantom-config/eslint'
 
-**Note**: The extension is done using a relative link to `node_modules` rather than the package directly due to ESLint only accepting packages containing `eslint-config` in the name.
+export default [
+    ...phantomConfig,
+];
+```
 
 #### Prettier
 
@@ -40,12 +42,9 @@ Create a `.stylelintrc.json` file in the root of the project containing:
 
 These can be included as scripts in the `package.json` to more easily access the linting and formatting tools included in Phantom Config.
 
-```
-"lint": "eslint . --ext ts,tsx --report-unused-disable-directives && tsc --noEmit --emitDeclarationOnly false",
-"lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix && tsc --noEmit --emitDeclarationOnly false",
-"prettier": "prettier ./ --check --ignore-path ./node_modules/phantom-config/.prettierignore",
-"prettier:fix": "prettier ./ --write --ignore-path ./node_modules/phantom-config/.prettierignore",
-"stylelint": "npx stylelint '**/*.{css,scss}'",
-"stylelint:fix": "npx stylelint '**/*.{css,scss}' --fix",
-"format": "npm run lint:fix && npm run stylelint:fix && npm run prettier:fix"
+```json
+"lint": "npx eslint . --report-unused-disable-directives --fix && tsc --noEmit --emitDeclarationOnly false",
+"prettier": "prettier ./ --write --ignore-path ./node_modules/phantom-config/.prettierignore",
+"stylelint": "npx stylelint '**/*.{css,scss}' --fix",
+"format": "npm run lint && npm run stylelint && npm run prettier"
 ```

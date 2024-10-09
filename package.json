@@ -2,15 +2,16 @@
     "name": "phantom-config",
     "version": "0.5.2",
     "description": "Shared configurations for ESLint, Prettier, Stylelint, and TypeScript",
+    "type": "module",
     "files": [
-        ".eslintrc.cjs",
+        "eslint.config.js",
         ".prettierrc.cjs",
         ".prettierignore",
         ".stylelintrc.json",
         "tsconfig.json"
     ],
     "exports": {
-        "./eslint": "./.eslintrc.cjs",
+        "./eslint": "./eslint.config.js",
         "./prettier": "./.prettierrc.cjs",
         "./stylelint": "./.stylelintrc.json",
         "./tsconfig": "./tsconfig.json"
@@ -35,19 +36,20 @@
         "url": "https://github.com/immacdonald/phantom-config/issues"
     },
     "homepage": "https://github.com/immacdonald/phantom-config#readme",
-    "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.0.0",
-        "@typescript-eslint/parser": "^6.0.0",
-        "eslint": "^8.57.0",
-        "eslint-import-resolver-typescript": "^3.6.1",
-        "eslint-plugin-import-x": "^0.5.2",
-        "eslint-plugin-jsx-a11y": "^6.9.0",
-        "eslint-plugin-react": "^7.33.1",
-        "eslint-plugin-react-hooks": "^4.6.2",
-        "eslint-plugin-react-refresh": "^0.4.3",
+    "dependencies": {
+        "@eslint/js": "^9.12.0",
+        "eslint-plugin-jsx-a11y": "^6.10.0",
+        "eslint-plugin-perfectionist": "^3.8.0",
+        "eslint-plugin-react": "^7.37.1",
+        "eslint-plugin-react-hooks": "5.1.0-rc-0751fac7-20241002",
+        "eslint-plugin-react-refresh": "^0.4.12",
         "prettier": "^3.3.2",
-        "stylelint": "^16.3.1",
-        "stylelint-config-standard": "^36.0.0",
-        "stylelint-config-standard-scss": "^13.1.0"
+        "stylelint": "^16.9.0",
+        "stylelint-config-standard": "^36.0.1",
+        "stylelint-config-standard-scss": "^13.1.0",
+        "typescript-eslint": "^8.8.1"
+    },
+    "peerDependencies": {
+        "eslint": "^9.12.0"
     }
 }
