@@ -8,7 +8,7 @@ This package offers preset configurations for ESLint, Prettier, and Stylelint to
 
 #### ESLint
 
-As of `phantom-config@1.0.0`, the supported version of ESLint is ESLint 9 based on flattened configs. For using with ESLint 8, please use `phantom-config@0.17.2`. 
+As of `phantom-config@1.0.0`, the supported version of ESLint is ESLint 9 based on flattened configs. For using with ESLint 8, please use `phantom-config@0.5.2`. 
 
 Create an `eslint.config.js` file in the root of the project containing:
 
