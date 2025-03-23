@@ -8,7 +8,7 @@ This package offers preset configurations for ESLint, Prettier, and Stylelint to
 
 #### ESLint
 
-As of `phantom-config@1.0.0`, the supported version of ESLint is ESLint 9 based on flattened configs. For using with ESLint 8, please use `phantom-config@0.5.2`. 
+As of `phantom-config@1.0.0`, the supported version of ESLint is ESLint 9 based on flattened configs. For using with ESLint 8, please use `phantom-config@0.5.2`.
 
 Create an `eslint.config.js` file in the root of the project containing:
 
@@ -45,6 +45,6 @@ These can be included as scripts in the `package.json` to more easily access the
 ```json
 "lint": "npx eslint . --report-unused-disable-directives --fix && tsc --noEmit --emitDeclarationOnly false",
 "prettier": "prettier ./ --write --ignore-path ./node_modules/phantom-config/.prettierignore",
-"stylelint": "npx stylelint '**/*.{css,scss}' --fix",
+"stylelint": "npx stylelint 'src/**/*.{css,scss}' --fix",
 "format": "npm run lint && npm run stylelint && npm run prettier"
 ```

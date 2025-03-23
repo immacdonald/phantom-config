@@ -1,22 +1,10 @@
-
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import reactRefresh from "eslint-plugin-react-refresh"
-import eslintPluginPerfectionist from "eslint-plugin-perfectionist";
+import reactRefresh from 'eslint-plugin-react-refresh';
+import perfectionist from 'eslint-plugin-perfectionist';
 
-const aliases = [
-    '@components',
-    '@config',
-    '@contexts',
-    '@data',
-    '@hoc',
-    '@hooks',
-    '@pages',
-    '@styles',
-    '@utility',
-    '@views',
-]
+const aliases = ['@assets', '@components', '@config', '@contexts', '@data', '@hoc', '@hooks', '@pages', '@styles', '@utility', '@views'];
 
 const internalGroups = () => {
     const groups = [];
@@ -25,23 +13,30 @@ const internalGroups = () => {
         groups.push(`${alias}/**`);
     });
     return groups;
-}
+};
 
 export default tseslint.config(
     {
-        ignores: ['**/dist', '**/lib', '**/.prettierrc.*'],
+        ignores: ['**/dist', '**/lib', '**/.prettierrc.*']
     },
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
     jsxA11y.flatConfigs.strict,
     {
-        files: ["**/*.{js,jsx,ts,tsx}"],
+        files: ['**/*.{js,jsx,ts,tsx}'],
         plugins: {
-            "react-refresh": reactRefresh,
-            "perfectionist": eslintPluginPerfectionist,
+            'react-refresh': reactRefresh,
+            perfectionist
         },
         rules: {
             'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    prefer: 'type-imports',
+                    disallowTypeAnnotations: false
+                }
+            ],
             '@typescript-eslint/explicit-function-return-type': 'warn',
             '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/no-explicit-any': 'warn',
@@ -52,37 +47,40 @@ export default tseslint.config(
                     order: 'asc',
                     ignoreCase: true,
                     newlinesBetween: 'never',
-                    maxLineLength: undefined,
                     matcher: 'minimatch',
-                    internalPattern: [
-                        '^~/',
-                        ...internalGroups()
-                    ],
+                    internalPattern: ['^~/', ...internalGroups()],
                     groups: [
                         'type',
                         'types',
-                        ['parent-type', 'sibling-type', 'index-type'],
+                        ['internal-type', 'parent-type', 'sibling-type', 'index-type'],
                         'react',
                         'builtin',
                         'external',
                         'internal',
-                        ['parent', 'sibling', 'index'], 'object',
+                        ['parent', 'sibling', 'index'],
+                        'object',
                         'unknown',
                         'style'
                     ],
                     customGroups: {
                         value: {
                             react: ['react', 'react-*'],
-                            types: '@types',
+                            types: '@types'
                         },
                         type: {
                             react: ['react', 'react-*'],
-                            types: '@types',
+                            types: '@types'
                         }
-                    },
-                    environment: 'node'
+                    }
+                }
+            ],
+            'perfectionist/sort-exports': [
+                'error',
+                {
+                    type: 'alphabetical',
+                    order: 'asc'
                 }
             ]
         }
     }
-)
+);
